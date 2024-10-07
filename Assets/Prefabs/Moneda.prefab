@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 955633739860200217}
   m_Layer: 0
   m_Name: Moneda
-  m_TagString: Untagged
+  m_TagString: moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,10 +28,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2742424411253303918}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0.0026520686, w: 0.9999965}
+  m_LocalRotation: {x: -0.49867246, y: 0.50132406, z: -0.5013241, w: 0.49867246}
   m_LocalPosition: {x: 2.68, y: 7.27, z: 15.33}
-  m_LocalScale: {x: 1, y: 0.058116, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.070000015, y: 0.004068121, z: 0.070000015}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.304}
@@ -47,11 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3515bdb71a4e9d42a8b221003251e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direccion: {x: 2, y: 0, z: 0}
-  movY: {x: 0, y: 2, z: 0}
-  boostR: 1
-  boostT: 1
-  contador: 5
+  direccion: {x: 0.2, y: 0, z: 0}
+  movY: {x: 0, y: 0.2, z: 0}
+  boostR: 0
+  boostT: 0
+  contador: 1
   tiempo: 0
 --- !u!33 &2560472863309826657
 MeshFilter:
@@ -118,7 +118,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
