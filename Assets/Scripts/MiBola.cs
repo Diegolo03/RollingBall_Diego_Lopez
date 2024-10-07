@@ -10,13 +10,14 @@ public class MiBola : MonoBehaviour
     Rigidbody rb;
     private float h, v;
     int monedas = 0, vidas = 100;
-   [SerializeField]TextMeshPro texto;
+    [SerializeField] Canvas c;
+   [SerializeField]TMP_Text texto;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        texto=GetComponent<TextMeshPro>();
+        texto=GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class MiBola : MonoBehaviour
          v = Input.GetAxisRaw("Vertical");
         movimiento = new Vector3(h, 0f, v).normalized;
         Saltar();
-        texto.text = "Soccer: " + monedas;
+       // TMP_Text texto = "Soccer: " + monedas;
 
         //transform.Translate(movimiento * Time.deltaTime);
     }
