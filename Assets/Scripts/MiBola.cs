@@ -11,13 +11,14 @@ public class MiBola : MonoBehaviour
     private float h, v;
     int monedas = 0, vidas = 100;
     [SerializeField] Canvas c;
-   [SerializeField]TMP_Text texto;
+   [SerializeField]TMP_Text textoMonedas, textoVida;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        texto=GetComponent<TMP_Text>();
+        textoVida.SetText("Vidas: " + vidas);
+        textoMonedas.SetText("Monedas: " + monedas);
     }
 
     // Update is called once per frame
@@ -27,9 +28,7 @@ public class MiBola : MonoBehaviour
          v = Input.GetAxisRaw("Vertical");
         movimiento = new Vector3(h, 0f, v).normalized;
         Saltar();
-       // TMP_Text texto = "Soccer: " + monedas;
-
-        //transform.Translate(movimiento * Time.deltaTime);
+       //transform.Translate(movimiento * Time.deltaTime);
     }
     private void FixedUpdate()
     {
@@ -49,15 +48,19 @@ public class MiBola : MonoBehaviour
         {
             Destroy(other.gameObject);
             monedas++;
-            Debug.Log(monedas);
+            textoMonedas.SetText("Monedas: "+ monedas);
+           
+
         }
         if (other.gameObject.CompareTag("enemigo"))
         {
             vidas -= 10;
-            Debug.Log(vidas);
+            textoVida.SetText("Vidas: " + vidas);
             if (vidas <= 0)
             {
                 Destroy(gameObject);
+                
+                
             }
         }
 
