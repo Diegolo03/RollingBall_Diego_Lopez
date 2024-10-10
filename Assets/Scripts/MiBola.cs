@@ -6,12 +6,14 @@ using UnityEngine;
 public class MiBola : MonoBehaviour
 {
     Vector3 movimiento;
-    [SerializeField] float fuerzaSalto =0f, fuerza=0f;
+    [SerializeField] float fuerzaSalto =0f, fuerza=0f,maxDistancia=0.7f;
     Rigidbody rb;
     private float h, v;
     int monedas = 0, vidas = 100;
     [SerializeField] Canvas c;
    [SerializeField]TMP_Text textoMonedas, textoVida;
+   [SerializeField]GameObject camara1, camara2;
+    [SerializeField] LayerMask queEsSuelo;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,9 @@ public class MiBola : MonoBehaviour
          v = Input.GetAxisRaw("Vertical");
         movimiento = new Vector3(h, 0f, v).normalized;
         Saltar();
+        
        //transform.Translate(movimiento * Time.deltaTime);
+       
     }
     private void FixedUpdate()
     {
@@ -37,11 +41,23 @@ public class MiBola : MonoBehaviour
     }
     void Saltar()
     {
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(0, fuerzaSalto, 0, ForceMode.Impulse);
+            if (DetectarSuelo() == true)
+            {
+                rb.AddForce(0, fuerzaSalto, 0, ForceMode.Impulse);
+            }
+
+
         }
     }
+    bool DetectarSuelo()
+    {
+        bool resultado = Physics.Raycast(transform.position, new Vector3(0, -1, 0), maxDistancia, queEsSuelo);
+        return resultado ;
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("moneda"))
@@ -52,6 +68,7 @@ public class MiBola : MonoBehaviour
            
 
         }
+        
         if (other.gameObject.CompareTag("enemigo"))
         {
             vidas -= 10;
@@ -65,4 +82,24 @@ public class MiBola : MonoBehaviour
         }
 
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+       
+        if (collision.gameObject.CompareTag("suelo"))
+        {
+            camara1.SetActive(true);
+            camara2.SetActive(false);
+        }
+ 
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("suelo"))
+        {
+            camara1.SetActive(false);
+            camara2.SetActive(true);
+        }
+
+    }
+
 }

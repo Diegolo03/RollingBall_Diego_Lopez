@@ -6,11 +6,13 @@ TagManager:
   tags:
   - moneda
   - enemigo
+  - rampa
+  - suelo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - suelo
   - Water
   - UI
   - 
