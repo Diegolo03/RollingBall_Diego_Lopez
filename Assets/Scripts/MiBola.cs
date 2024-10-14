@@ -14,6 +14,8 @@ public class MiBola : MonoBehaviour
    [SerializeField]TMP_Text textoMonedas, textoVida;
    [SerializeField]GameObject camara1, camara2;
     [SerializeField] LayerMask queEsSuelo;
+    [SerializeField] AudioClip monedita;
+    [SerializeField] AudioManager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +64,7 @@ public class MiBola : MonoBehaviour
     {
         if (other.gameObject.CompareTag("moneda"))
         {
+            manager.ReproducirSonido(monedita);
             Destroy(other.gameObject);
             monedas++;
             textoMonedas.SetText("Monedas: "+ monedas);
