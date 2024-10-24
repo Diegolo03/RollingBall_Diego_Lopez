@@ -21,8 +21,8 @@ public class MiBola : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        textoVida.SetText("Vidas: " + vidas);
-        textoMonedas.SetText("Monedas: " + monedas);
+        //textoVida.SetText("Vidas: " + vidas);
+        //textoMonedas.SetText("Monedas: " + monedas);
     }
 
     // Update is called once per frame
@@ -31,6 +31,7 @@ public class MiBola : MonoBehaviour
          h = Input.GetAxisRaw("Horizontal");
          v = Input.GetAxisRaw("Vertical");
         movimiento = new Vector3(h, 0f, v).normalized;
+        movimiento = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * movimiento;
         Saltar();
         
        //transform.Translate(movimiento * Time.deltaTime);
