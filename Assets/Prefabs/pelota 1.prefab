@@ -30,10 +30,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5831849568754109124}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.037264522, y: -0.26791173, z: -0.9626667, w: 0.010370789}
-  m_LocalPosition: {x: -25.625252, y: 0.41044998, z: 33.19482}
-  m_LocalScale: {x: 0.697293, y: 0.697293, z: 0.697293}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0.24937789, y: -0.044435587, z: 0.011452143, w: -0.9673185}
+  m_LocalPosition: {x: -341.26517, y: 783.89526, z: -428.534}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -31.104, y: 4.434, z: -180}
@@ -49,18 +49,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22911ec5bbd9a94fb405e748ae8948b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerzaSalto: 5
-  fuerza: 2
+  fuerzaSalto: 50
+  fuerza: 50
   maxDistancia: 0.07
+  boostVelocidad: 1
   c: {fileID: 0}
   textoMonedas: {fileID: 0}
   textoVida: {fileID: 0}
-  camara1: {fileID: 0}
-  camara2: {fileID: 0}
   queEsSuelo:
     serializedVersion: 2
     m_Bits: 4294967295
   monedita: {fileID: 8300000, guid: c33ae10a5797c1e4bb67ba6388e48436, type: 3}
+  fiun: {fileID: 8300000, guid: 04cefededffcab742b163910d3e214e4, type: 3}
   manager: {fileID: 0}
 --- !u!33 &5292199992191447997
 MeshFilter:
@@ -69,7 +69,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5831849568754109124}
-  m_Mesh: {fileID: -3072762541839431554, guid: 3b0bcf0bf95f77648b6d611d24aa5f3a, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3864736629850734861
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.8512065
+  m_Radius: 0.50000024
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6548600537854510790
 Rigidbody:
@@ -141,7 +141,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5831849568754109124}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -212,18 +212,18 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.4842807
-        inSlope: -0.4842807
-        outSlope: -0.4842807
+        value: 1
+        inSlope: -1
+        outSlope: -1
         tangentMode: 34
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -0.4842807
-        outSlope: -0.4842807
+        inSlope: -1
+        outSlope: -1
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334

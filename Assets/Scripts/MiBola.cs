@@ -6,23 +6,23 @@ using UnityEngine;
 public class MiBola : MonoBehaviour
 {
     Vector3 movimiento;
-    [SerializeField] float fuerzaSalto =0f, fuerza=0f,maxDistancia=0.7f;
+    [SerializeField] float fuerzaSalto =0f, fuerza=0f,maxDistancia=0.7f, boostVelocidad;
     Rigidbody rb;
     private float h, v;
     int monedas = 0, vidas = 100;
     [SerializeField] Canvas c;
-   [SerializeField]TMP_Text textoMonedas, textoVida;
-   [SerializeField]GameObject camara1, camara2;
+    [SerializeField] TMP_Text textoMonedas, textoVida;
     [SerializeField] LayerMask queEsSuelo;
-    [SerializeField] AudioClip monedita;
+    [SerializeField] AudioClip monedita, fiun;
     [SerializeField] AudioManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
-        //textoVida.SetText("Vidas: " + vidas);
-        //textoMonedas.SetText("Monedas: " + monedas);
+        textoVida.SetText("Vidas: " + vidas);
+        textoMonedas.SetText("Monedas: " + monedas);
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class MiBola : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.AddForce(movimiento * fuerza, ForceMode.Force);
+        rb.AddForce((movimiento * fuerza)*boostVelocidad, ForceMode.Force);
 
     }
     void Saltar()
@@ -72,7 +72,24 @@ public class MiBola : MonoBehaviour
            
 
         }
-        
+
+        if (other.gameObject.CompareTag("boost"))
+        {
+            manager.ReproducirSonido(fiun);
+
+
+            boostVelocidad = 2;
+
+
+        }
+
+        if (other.gameObject.CompareTag("boost2"))
+        {
+           boostVelocidad = 3;
+
+
+        }
+
         if (other.gameObject.CompareTag("enemigo"))
         {
             vidas -= 10;
@@ -86,24 +103,21 @@ public class MiBola : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-       
-        if (collision.gameObject.CompareTag("suelo"))
+        if (other.gameObject.CompareTag("boost"))
         {
-            camara1.SetActive(true);
-            camara2.SetActive(false);
-        }
- 
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("suelo"))
-        {
-            camara1.SetActive(false);
-            camara2.SetActive(true);
-        }
+            boostVelocidad = 1;
 
+
+        }
+        if (other.gameObject.CompareTag("boost2"))
+        {
+            boostVelocidad = 1;
+
+
+        }
     }
+
 
 }

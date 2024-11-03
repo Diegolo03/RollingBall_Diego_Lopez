@@ -15,11 +15,11 @@ public class Murocubos : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Time.timeScale = 0.5f;
         }
-    }
+    }*/
 }

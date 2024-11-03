@@ -11,6 +11,7 @@ public class Rotacion1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         rb.AddTorque(direccion * boostR, ForceMode.VelocityChange);
     }
