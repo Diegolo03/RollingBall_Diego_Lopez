@@ -49,18 +49,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22911ec5bbd9a94fb405e748ae8948b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerzaSalto: 50
-  fuerza: 50
-  maxDistancia: 0.07
+  fuerzaSalto: 55
+  fuerza: 55
+  maxDistancia: 2
   boostVelocidad: 1
   c: {fileID: 0}
   textoMonedas: {fileID: 0}
   textoVida: {fileID: 0}
+  textoEstrellas: {fileID: 0}
   queEsSuelo:
     serializedVersion: 2
     m_Bits: 4294967295
   monedita: {fileID: 8300000, guid: c33ae10a5797c1e4bb67ba6388e48436, type: 3}
   fiun: {fileID: 8300000, guid: 04cefededffcab742b163910d3e214e4, type: 3}
+  estrella: {fileID: 8300000, guid: 0d668c1b2d2809740a6a7244156770a8, type: 3}
   manager: {fileID: 0}
 --- !u!33 &5292199992191447997
 MeshFilter:

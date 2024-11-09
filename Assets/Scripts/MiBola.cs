@@ -9,11 +9,11 @@ public class MiBola : MonoBehaviour
     [SerializeField] float fuerzaSalto =0f, fuerza=0f,maxDistancia=0.7f, boostVelocidad;
     Rigidbody rb;
     private float h, v;
-    int monedas = 0, vidas = 100;
+    int monedas = 0, vidas = 100, estrellas=0;
     [SerializeField] Canvas c;
-    [SerializeField] TMP_Text textoMonedas, textoVida;
+    [SerializeField] TMP_Text textoMonedas, textoVida, textoEstrellas;
     [SerializeField] LayerMask queEsSuelo;
-    [SerializeField] AudioClip monedita, fiun;
+    [SerializeField] AudioClip monedita, fiun, estrella;
     [SerializeField] AudioManager manager;
 
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class MiBola : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         textoVida.SetText("Vidas: " + vidas);
         textoMonedas.SetText("Monedas: " + monedas);
+        textoEstrellas.SetText("Estrellas: " + estrellas + " /3");
     }
 
     // Update is called once per frame
@@ -70,6 +71,15 @@ public class MiBola : MonoBehaviour
             monedas++;
             textoMonedas.SetText("Monedas: "+ monedas);
            
+
+        }
+        if (other.gameObject.CompareTag("estrella"))
+        {
+            manager.ReproducirSonido(estrella);
+            Destroy(other.gameObject);
+            estrellas++;
+            textoEstrellas.SetText("Estrellas: " + estrellas +" /3");
+
 
         }
 

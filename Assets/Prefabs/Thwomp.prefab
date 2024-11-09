@@ -51,7 +51,7 @@ MonoBehaviour:
   movY: {x: 0, y: 0.1, z: 0}
   boostR: 0
   boostT: 5
-  contador: 5
+  contador: 3
   tiempo: 0
 --- !u!33 &1094017824191597237
 MeshFilter:
@@ -125,6 +125,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5060444177187149915, guid: 3ebe084d0a632844880fdc0d6605c942, type: 3}
