@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.SearchService;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class CanvasManager : MonoBehaviour
+{
+   public void IniciarPartida()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void FinPartida()
+    {
+        Application.Quit();
+    }
+}
