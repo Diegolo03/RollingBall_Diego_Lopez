@@ -15,6 +15,7 @@ public class MiBola : MonoBehaviour
     [SerializeField] LayerMask queEsSuelo;
     [SerializeField] AudioClip monedita, fiun, estrella;
     [SerializeField] AudioManager manager;
+    [SerializeField] GameObject estrella2, estrella3;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,17 @@ public class MiBola : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("enemigo"))
+        {
+            vidas -= 10;
+            textoVida.SetText("Vidas: " + vidas);
+            if (vidas <= 0)
+            {
+                Destroy(gameObject);
+
+
+            }
+        }
         if (other.gameObject.CompareTag("moneda"))
         {
             manager.ReproducirSonido(monedita);
@@ -100,17 +112,7 @@ public class MiBola : MonoBehaviour
 
         }
 
-        if (other.gameObject.CompareTag("enemigo"))
-        {
-            vidas -= 10;
-            textoVida.SetText("Vidas: " + vidas);
-            if (vidas <= 0)
-            {
-                Destroy(gameObject);
-                
-                
-            }
-        }
+       
 
     }
     private void OnTriggerExit(Collider other)
@@ -126,6 +128,20 @@ public class MiBola : MonoBehaviour
             boostVelocidad = 1;
 
 
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("enemigo"))
+        {
+            vidas -= 10;
+            textoVida.SetText("Vidas: " + vidas);
+            if (vidas <= 0)
+            {
+                Destroy(gameObject);
+
+
+            }
         }
     }
 

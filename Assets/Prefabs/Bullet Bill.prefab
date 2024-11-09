@@ -1,5 +1,69 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &27510636076370165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8589982712561465736}
+  - component: {fileID: 9075567799955057855}
+  - component: {fileID: 4168658363977664184}
+  m_Layer: 0
+  m_Name: Capsule
+  m_TagString: enemigo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8589982712561465736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27510636076370165}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7385869, y: -0, z: 0.00000011937632, w: 0.6741584}
+  m_LocalPosition: {x: -0.00034029825, y: 0.00061367964, z: -0.000105990206}
+  m_LocalScale: {x: 23.168, y: 23.168, z: 23.168}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7971795405478869257}
+  m_LocalEulerAnglesHint: {x: 95.221985, y: 0, z: 0}
+--- !u!33 &9075567799955057855
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27510636076370165}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &4168658363977664184
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27510636076370165}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &952499721407544770
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +75,7 @@ GameObject:
   - component: {fileID: 7971795405478869257}
   - component: {fileID: 7459723100318677565}
   - component: {fileID: 1084086317685138138}
-  - component: {fileID: 7174963380749113525}
+  - component: {fileID: 6387928690761271132}
   m_Layer: 0
   m_Name: Bullet Bill
   m_TagString: Untagged
@@ -31,7 +95,8 @@ Transform:
   m_LocalPosition: {x: -360.49384, y: 768.99396, z: -372.778}
   m_LocalScale: {x: 0.0029085784, y: 0.69154173, z: 0.0029085784}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8589982712561465736}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7459723100318677565
@@ -86,7 +151,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7174963380749113525
+--- !u!64 &6387928690761271132
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

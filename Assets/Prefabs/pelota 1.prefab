@@ -30,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5831849568754109124}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.24937789, y: -0.044435587, z: 0.011452143, w: -0.9673185}
+  m_LocalRotation: {x: 0.24938193, y: 0.04443321, z: -0.011455226, w: 0.9673175}
   m_LocalPosition: {x: -341.26517, y: 783.89526, z: -428.534}
-  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -31.104, y: 4.434, z: -180}
+  m_LocalEulerAnglesHint: {x: 28.913, y: 5.26, z: 0}
 --- !u!114 &2639930470836672572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuerzaSalto: 55
   fuerza: 55
-  maxDistancia: 2
+  maxDistancia: 1
   boostVelocidad: 1
   c: {fileID: 0}
   textoMonedas: {fileID: 0}
@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2268347753705487227, guid: 3b0bcf0bf95f77648b6d611d24aa5f3a, type: 3}
+  - {fileID: 2100000, guid: 680a01af26df30f4db679486a31102d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -204,7 +204,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.7
+  m_Time: 0.75
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -214,21 +214,21 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: -1
-        outSlope: -1
-        tangentMode: 34
+        value: 0.5094334
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -1
-        outSlope: -1
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -266,7 +266,7 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
