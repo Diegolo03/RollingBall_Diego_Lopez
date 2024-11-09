@@ -4,22 +4,35 @@ using UnityEngine;
 
 public class Murocubos : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Rigidbody[] rbs;
+    [SerializeField] private float bolita;
+   
+    private float timer = 0f;
+    private bool Cuenta = false;
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+       if (Cuenta)
+       {
+            timer += 1 * Time.unscaledDeltaTime;
+            if (timer >= 2f )
+            {
+                Time.timeScale = 1f;
+                for ( int i = 0; i < rbs.Length; i++)
+                {
+                    rbs[i].useGravity = true;
+                }
+            }
+       }
     }
-   /* private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Time.timeScale = 0.5f;
-        }
-    }*/
+     private void OnTriggerEnter(Collider other)
+     {
+         if (other.gameObject.CompareTag("Player"))
+         {
+             Time.timeScale = bolita;
+             Cuenta=true;
+
+         }
+     }
 }

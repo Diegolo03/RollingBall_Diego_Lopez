@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
-   public void IniciarPartida()
+    public void IniciarPartida()
     {
         SceneManager.LoadScene(1);
     }
     public void FinPartida()
     {
         Application.Quit();
+    }
+    public void Respawn()
+    {
+        SceneManager.LoadScene(1);
     }
 }

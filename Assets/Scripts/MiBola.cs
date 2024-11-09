@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MiBola : MonoBehaviour
@@ -25,6 +26,8 @@ public class MiBola : MonoBehaviour
         textoVida.SetText("Vidas: " + vidas);
         textoMonedas.SetText("Monedas: " + monedas);
         textoEstrellas.SetText("Estrellas: " + estrellas + " /3");
+        estrella2.SetActive(false);
+        estrella3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,6 +38,15 @@ public class MiBola : MonoBehaviour
         movimiento = new Vector3(h, 0f, v).normalized;
         movimiento = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * movimiento;
         Saltar();
+        if(estrellas== 1)
+        {
+            estrella3.SetActive(true);
+        }
+        if(monedas == 8)
+        {
+            estrella2.SetActive(true);
+        }
+        
         
        //transform.Translate(movimiento * Time.deltaTime);
        
@@ -71,11 +83,24 @@ public class MiBola : MonoBehaviour
             textoVida.SetText("Vidas: " + vidas);
             if (vidas <= 0)
             {
+                SceneManager.LoadScene(2);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 Destroy(gameObject);
-
+                
 
             }
         }
+        if (other.gameObject.CompareTag("muerte"))
+        {
+            Destroy(gameObject);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene(2);
+
+
+        }
+
         if (other.gameObject.CompareTag("moneda"))
         {
             manager.ReproducirSonido(monedita);
@@ -91,7 +116,13 @@ public class MiBola : MonoBehaviour
             Destroy(other.gameObject);
             estrellas++;
             textoEstrellas.SetText("Estrellas: " + estrellas +" /3");
-
+            if (estrellas == 3)
+            {
+                SceneManager.LoadScene(3);
+                Destroy(gameObject);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
 
         }
 
