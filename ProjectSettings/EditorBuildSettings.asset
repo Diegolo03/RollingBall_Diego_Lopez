@@ -7,8 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Inicio.unity
-    guid: 746415abc52382948b96be956093c615
+    guid: 30fdae23c50ff4444938c41e41a1e075
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Muerte.unity
+    guid: 746415abc52382948b96be956093c615
+  - enabled: 1
+    path: Assets/Scenes/Ganar.unity
+    guid: 201896e67d48264459b8d5c74b73ce9b
   m_configObjects: {}

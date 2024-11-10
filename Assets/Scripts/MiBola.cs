@@ -14,7 +14,7 @@ public class MiBola : MonoBehaviour
     [SerializeField] Canvas c;
     [SerializeField] TMP_Text textoMonedas, textoVida, textoEstrellas;
     [SerializeField] LayerMask queEsSuelo;
-    [SerializeField] AudioClip monedita, fiun, estrella;
+    [SerializeField] AudioClip monedita, fiun, estrella,bonk;
     [SerializeField] AudioManager manager;
     [SerializeField] GameObject estrella2, estrella3;
 
@@ -79,10 +79,12 @@ public class MiBola : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemigo"))
         {
+            manager.ReproducirSonido(bonk);
             vidas -= 10;
             textoVida.SetText("Vidas: " + vidas);
             if (vidas <= 0)
             {
+               
                 SceneManager.LoadScene(2);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -138,7 +140,8 @@ public class MiBola : MonoBehaviour
 
         if (other.gameObject.CompareTag("boost2"))
         {
-           boostVelocidad = 3;
+            
+            boostVelocidad = 3;
 
 
         }
@@ -165,10 +168,15 @@ public class MiBola : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemigo"))
         {
+            manager.ReproducirSonido(bonk);
             vidas -= 10;
             textoVida.SetText("Vidas: " + vidas);
             if (vidas <= 0)
             {
+
+                SceneManager.LoadScene(2);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 Destroy(gameObject);
 
 

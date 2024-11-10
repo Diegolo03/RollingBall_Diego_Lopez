@@ -63,7 +63,10 @@ MonoBehaviour:
   monedita: {fileID: 8300000, guid: c33ae10a5797c1e4bb67ba6388e48436, type: 3}
   fiun: {fileID: 8300000, guid: 04cefededffcab742b163910d3e214e4, type: 3}
   estrella: {fileID: 8300000, guid: 0d668c1b2d2809740a6a7244156770a8, type: 3}
+  bonk: {fileID: 8300000, guid: acc263d20dc1375418477b24547b3dbe, type: 3}
   manager: {fileID: 0}
+  estrella2: {fileID: 0}
+  estrella3: {fileID: 0}
 --- !u!33 &5292199992191447997
 MeshFilter:
   m_ObjectHideFlags: 0
